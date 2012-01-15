@@ -1,0 +1,913 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Twitterizer2.Asynchronous</name>
+    </assembly>
+    <members>
+        <member name="M:Twitterizer.TwitterSpamAsync.ReportUser(Twitterizer.OAuthTokens,System.Decimal,Twitterizer.OptionalProperties,System.TimeSpan,System.Action{Twitterizer.TwitterAsyncResponse{Twitterizer.TwitterUser}})">
+            <summary>
+            Blocks the user and reports them for spam/abuse.
+            </summary>
+            <param name="tokens">The tokens.</param>
+            <param name="userId">The user id.</param>
+            <param name="options">The options.</param>
+            <param name="timeout">The timeout.</param>
+            <param name="function">The function.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Twitterizer.TwitterSpamAsync.ReportUser(Twitterizer.OAuthTokens,System.String,Twitterizer.OptionalProperties,System.TimeSpan,System.Action{Twitterizer.TwitterAsyncResponse{Twitterizer.TwitterUser}})">
+            <summary>
+            Blocks the user and reports them for spam/abuse.
+            </summary>
+            <param name="tokens">The tokens.</param>
+            <param name="screenName">The users screenName.</param>
+            <param name="options">The options.</param>
+            <param name="timeout">The timeout.</param>
+            <param name="function">The function.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Twitterizer.TwitterDirectMessageAsync">
+            <summary>
+            Provides asynchronous method wrappers for the <see cref="T:Twitterizer.Commands.DirectMessagesCommand"/> class.
+            </summary>
+        </member>
+        <member name="M:Twitterizer.TwitterDirectMessageAsync.Delete(Twitterizer.OAuthTokens,System.Decimal,Twitterizer.OptionalProperties,System.TimeSpan,System.Action{Twitterizer.TwitterAsyncResponse{Twitterizer.TwitterDirectMessage}})">
+            <summary>
+            Deletes the specified direct message.
+            </summary>
+            <param name="tokens">The tokens.</param>
+            <param name="id">The direct message id.</param>
+            <param name="options">The options.</param>
+            <param name="timeout">The timeout.</param>
+            <param name="function">The function.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Twitterizer.TwitterDirectMessageAsync.DirectMessagesSent(Twitterizer.OAuthTokens,Twitterizer.DirectMessagesSentOptions,System.TimeSpan,System.Action{Twitterizer.TwitterAsyncResponse{Twitterizer.TwitterDirectMessageCollection}})">
+            <summary>
+            Returns a list of the 20 most recent direct messages sent by the authenticating user.
+            </summary>
+            <param name="tokens">The tokens.</param>
+            <param name="options">The options.</param>
+            <returns>
+            A <see cref="T:Twitterizer.TwitterDirectMessageCollection"/> instance.
+            </returns>
+        </member>
+        <member name="M:Twitterizer.TwitterDirectMessageAsync.DirectMessages(Twitterizer.OAuthTokens,Twitterizer.DirectMessagesOptions,System.TimeSpan,System.Action{Twitterizer.TwitterAsyncResponse{Twitterizer.TwitterDirectMessageCollection}})">
+            <summary>
+            Returns a list of the 20 most recent direct messages sent to the authenticating user.
+            </summary>
+            <param name="tokens">The tokens.</param>
+            <param name="options">The options.</param>
+            <param name="timeout">The timeout.</param>
+            <param name="function">The function.</param>
+            <returns>
+            A <see cref="T:Twitterizer.TwitterDirectMessageCollection"/> instance.
+            </returns>
+        </member>
+        <member name="M:Twitterizer.TwitterDirectMessageAsync.Send(Twitterizer.OAuthTokens,System.Decimal,System.String,Twitterizer.OptionalProperties,System.TimeSpan,System.Action{Twitterizer.TwitterAsyncResponse{Twitterizer.TwitterDirectMessage}})">
+            <summary>
+            Sends a new direct message to the specified user from the authenticating user.
+            </summary>
+            <param name="tokens">The tokens.</param>
+            <param name="userId">The user id.</param>
+            <param name="text">The text.</param>
+            <param name="options">The options.</param>
+            <param name="timeout">The timeout.</param>
+            <param name="function">The function.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Twitterizer.TwitterDirectMessageAsync.Send(Twitterizer.OAuthTokens,System.String,System.String,Twitterizer.OptionalProperties,System.TimeSpan,System.Action{Twitterizer.TwitterAsyncResponse{Twitterizer.TwitterDirectMessage}})">
+            <summary>
+            Sends a new direct message to the specified user from the authenticating user.
+            </summary>
+            <param name="tokens">The tokens.</param>
+            <param name="screenName">The user's screen name.</param>
+            <param name="text">The text.</param>
+            <param name="options">The options.</param>
+            <param name="timeout">The timeout.</param>
+            <param name="function">The function.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Twitterizer.TwitterRateLimitStatusAsync">
+            <summary>
+            The Twitter Rate Limit Status Async class
+            </summary>
+        </member>
+        <member name="M:Twitterizer.TwitterRateLimitStatusAsync.GetStatus(Twitterizer.OAuthTokens,Twitterizer.OptionalProperties,System.TimeSpan,System.Action{Twitterizer.TwitterAsyncResponse{Twitterizer.TwitterRateLimitStatus}})">
+            <summary>
+            Gets the rate limiting status status for the authenticated user.
+            </summary>
+            <param name="tokens">The OAuth tokens.</param>
+            <param name="options">The options.</param>
+            <param name="timeout">The timeout.</param>
+            <param name="function">The function.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Twitterizer.TwitterRateLimitStatusAsync.GetStatus(Twitterizer.OAuthTokens,System.TimeSpan,System.Action{Twitterizer.TwitterResponse{Twitterizer.TwitterRateLimitStatus}})">
+            <summary>
+            Gets the rate limiting status status based on the application's IP address.
+            </summary>
+            <param name="tokens">The OAuth tokens.</param>
+            <param name="timeout">The timeout.</param>
+            <param name="function">The function.</param> 
+            <returns></returns>
+        </member>
+        <member name="M:Twitterizer.TwitterRateLimitStatusAsync.GetStatus(System.TimeSpan,System.Action{Twitterizer.TwitterResponse{Twitterizer.TwitterRateLimitStatus}})">
+            <summary>
+            Gets the rate limiting status status based on the application's IP address.
+            </summary>
+            <param name="timeout">The timeout.</param>
+            <param name="function">The function.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Twitterizer.TwitterSearchAsync.Search(System.String,Twitterizer.SearchOptions,System.TimeSpan,System.Action{Twitterizer.TwitterAsyncResponse{Twitterizer.TwitterSearchResultCollection}})">
+            <summary>
+            Searches Twitter with the the specified query.
+            </summary>
+            <param name="query">The query.</param>
+            <param name="options">The options.</param>
+            <param name="timeout">The timeout.</param>
+            <param name="function">The function.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Twitterizer.TwitterSearchAsync.Search(Twitterizer.OAuthTokens,System.String,Twitterizer.SearchOptions,System.TimeSpan,System.Action{Twitterizer.TwitterAsyncResponse{Twitterizer.TwitterSearchResultCollection}})">
+            <summary>
+            Searches Twitter with the the specified query.
+            </summary>
+            <param name="tokens">The tokens.</param>
+            <param name="query">The query.</param>
+            <param name="options">The options.</param>
+            <param name="timeout">The timeout.</param>
+            <param name="function">The function.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Twitterizer.TwitterListAsync.AddMember(Twitterizer.OAuthTokens,System.String,System.String,System.Decimal,Twitterizer.OptionalProperties,System.TimeSpan,System.Action{Twitterizer.TwitterAsyncResponse{Twitterizer.TwitterList}})">
+            <summary>
+            Add a member to a list. The authenticated user must own the list to be able to add members to it. Lists are limited to having 500 members.
+            </summary>
+            <param name="tokens">The tokens.</param>
+            <param name="ownerUsername">The owner username.</param>
+            <param name="listId">The list id.</param>
+            <param name="userIdToAdd">The user id to add.</param>
+            <param name="options">The options.</param>
+            <param name="timeout">The timeout.</param>
+            <param name="function">The function.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Twitterizer.TwitterListAsync.CheckMembership(Twitterizer.OAuthTokens,System.String,System.String,System.Decimal,Twitterizer.OptionalProperties,System.TimeSpan,System.Action{Twitterizer.TwitterAsyncResponse{Twitterizer.TwitterUser}})">
+            <summary>
+            Check if a user is a member of the specified list.
+            </summary>
+            <param name="tokens">The tokens.</param>
+            <param name="ownerUsername">The owner username.</param>
+            <param name="listId">The list id.</param>
+            <param name="userId">The user id.</param>
+            <param name="options">The options.</param>
+            <param name="timeout">The timeout.</param>
+            <param name="function">The function.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Twitterizer.TwitterListAsync.Delete(Twitterizer.OAuthTokens,System.String,System.String,Twitterizer.OptionalProperties,System.TimeSpan,System.Action{Twitterizer.TwitterAsyncResponse{Twitterizer.TwitterList}})">
+            <summary>
+            Deletes the specified list. Must be owned by the authenticated user.
+            </summary>
+            <param name="tokens">The tokens.</param>
+            <param name="username">The username.</param>
+            <param name="listIdOrSlug">The list id or slug.</param>
+            <param name="options">The options.</param>
+            <param name="timeout">The timeout.</param>
+            <param name="function">The function.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Twitterizer.TwitterListAsync.GetList(Twitterizer.OAuthTokens,System.String,System.String,Twitterizer.OptionalProperties,System.TimeSpan,System.Action{Twitterizer.TwitterAsyncResponse{Twitterizer.TwitterList}})">
+            <summary>
+            Show the specified list. Private lists will only be shown if the authenticated user owns the specified list.
+            </summary>
+            <param name="tokens">The tokens.</param>
+            <param name="username">The username.</param>
+            <param name="listIdOrSlug">The list id or slug.</param>
+            <param name="options">The options.</param>
+            <param name="timeout">The timeout.</param>
+            <param name="function">The function.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Twitterizer.TwitterListAsync.Show(Twitterizer.OAuthTokens,System.String,Twitterizer.OptionalProperties,System.TimeSpan,System.Action{Twitterizer.TwitterAsyncResponse{Twitterizer.TwitterList}})">
+            <summary>
+            Show the specified list. Private lists will only be shown if the authenticated user owns the specified list.
+            </summary>
+            <param name="tokens">The tokens.</param>
+            <param name="listIdOrSlug">The list id or slug.</param>
+            <param name="options">The options.</param>
+            <param name="timeout">The timeout.</param>
+            <param name="function">The function.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Twitterizer.TwitterListAsync.GetLists(Twitterizer.OAuthTokens,System.String,Twitterizer.GetListsOptions,System.TimeSpan,System.Action{Twitterizer.TwitterAsyncResponse{Twitterizer.TwitterListCollection}})">
+            <summary>
+            List the lists of the specified user. Private lists will be included if the authenticated users is the same as the user who's lists are being returned.
+            </summary>
+            <param name="tokens">The tokens.</param>
+            <param name="username">The username.</param>
+            <param name="options">The options.</param>
+            <param name="timeout">The timeout.</param>
+            <param name="function">The function.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Twitterizer.TwitterListAsync.GetMembers(Twitterizer.OAuthTokens,System.String,System.String,Twitterizer.GetListMembersOptions,System.TimeSpan,System.Action{Twitterizer.TwitterAsyncResponse{Twitterizer.TwitterUserCollection}})">
+            <summary>
+            Returns the members of the specified list.
+            </summary>
+            <param name="tokens">The tokens.</param>
+            <param name="ownerUsername">The owner username.</param>
+            <param name="listId">The list id.</param>
+            <param name="options">The options.</param>
+            <param name="timeout">The timeout.</param>
+            <param name="function">The function.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Twitterizer.TwitterListAsync.GetMemberships(Twitterizer.OAuthTokens,System.String,Twitterizer.ListMembershipsOptions,System.TimeSpan,System.Action{Twitterizer.TwitterAsyncResponse{Twitterizer.TwitterListCollection}})">
+            <summary>
+            List the lists the specified user has been added to.
+            </summary>
+            <param name="tokens">The tokens.</param>
+            <param name="username">The username.</param>
+            <param name="options">The options.</param>
+            <param name="timeout">The timeout.</param>
+            <param name="function">The function.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Twitterizer.TwitterListAsync.GetStatuses(Twitterizer.OAuthTokens,System.String,System.String,Twitterizer.ListStatusesOptions,System.TimeSpan,System.Action{Twitterizer.TwitterAsyncResponse{Twitterizer.TwitterStatusCollection}})">
+            <summary>
+            Show tweet timeline for members of the specified list.
+            </summary>
+            <param name="tokens">The tokens.</param>
+            <param name="username">The username.</param>
+            <param name="listIdOrSlug">The list id or slug.</param>
+            <param name="options">The options.</param>
+            <param name="timeout">The timeout.</param>
+            <param name="function">The function.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Twitterizer.TwitterListAsync.GetSubscriptions(Twitterizer.OAuthTokens,System.String,Twitterizer.GetListSubscriptionsOptions,System.TimeSpan,System.Action{Twitterizer.TwitterAsyncResponse{Twitterizer.TwitterListCollection}})">
+            <summary>
+            List the lists the specified user follows.
+            </summary>
+            <param name="tokens">The tokens.</param>
+            <param name="userName">Name of the user.</param>
+            <param name="options">The options.</param>
+            <param name="timeout">The timeout.</param>
+            <param name="function">The function.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Twitterizer.TwitterListAsync.New(Twitterizer.OAuthTokens,System.String,System.String,System.Boolean,System.String,Twitterizer.OptionalProperties,System.TimeSpan,System.Action{Twitterizer.TwitterAsyncResponse{Twitterizer.TwitterList}})">
+            <summary>
+            Creates a new list for the authenticated user. Accounts are limited to 20 lists.
+            </summary>
+            <param name="tokens">The tokens.</param>
+            <param name="username">The username.</param>
+            <param name="name">The name.</param>
+            <param name="isPublic">if set to <c>true</c> [is public].</param>
+            <param name="description">The description.</param>
+            <param name="options">The options.</param>
+            <param name="timeout">The timeout.</param>
+            <param name="function">The function.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Twitterizer.TwitterListAsync.RemoveMember(Twitterizer.OAuthTokens,System.String,System.String,System.Decimal,Twitterizer.OptionalProperties,System.TimeSpan,System.Action{Twitterizer.TwitterAsyncResponse{Twitterizer.TwitterList}})">
+            <summary>
+            Removes the specified member from the list. The authenticated user must be the list's owner to remove members from the list.
+            </summary>
+            <param name="tokens">The tokens.</param>
+            <param name="ownerUsername">The owner username.</param>
+            <param name="listId">The list id.</param>
+            <param name="userIdToAdd">The user id to add.</param>
+            <param name="options">The options.</param>
+            <param name="timeout">The timeout.</param>
+            <param name="function">The function.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Twitterizer.TwitterListAsync.Update(Twitterizer.OAuthTokens,System.String,Twitterizer.UpdateListOptions,System.TimeSpan,System.Action{Twitterizer.TwitterAsyncResponse{Twitterizer.TwitterList}})">
+            <summary>
+            Updates the specified list.
+            </summary>
+            <param name="tokens">The tokens.</param>
+            <param name="username">The username.</param>
+            <param name="listId">The list id.</param>
+            <param name="options">The options.</param>
+            <param name="timeout">The timeout.</param>
+            <param name="function">The function.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Twitterizer.TwitterListAsync.UnSubscribe(Twitterizer.OAuthTokens,System.Decimal,Twitterizer.OptionalProperties,System.TimeSpan,System.Action{Twitterizer.TwitterAsyncResponse{Twitterizer.TwitterList}})">
+            <summary>
+            Unsubscribes the authenticated user from the specified list.
+            </summary>
+            <param name="tokens">The tokens.</param>
+            <param name="listId">The list id.</param>
+            <param name="options">The options.</param>
+            <param name="timeout">The timeout.</param>
+            <param name="function">The function.</param>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:Twitterizer.TwitterBlockAsync.Create(Twitterizer.OAuthTokens,System.Decimal,Twitterizer.OptionalProperties,System.TimeSpan,System.Action{Twitterizer.TwitterAsyncResponse{Twitterizer.TwitterUser}})">
+            <summary>
+            Blocks the user specified as the authenticating user. Destroys a friendship to the blocked user if it exists.
+            </summary>
+            <param name="tokens">The tokens.</param>
+            <param name="userId">The user id.</param>
+            <param name="options">The options.</param>
+            <param name="timeout">The timeout.</param>
+            <param name="function">The function.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Twitterizer.TwitterBlockAsync.Create(Twitterizer.OAuthTokens,System.Decimal,System.TimeSpan,System.Action{Twitterizer.TwitterAsyncResponse{Twitterizer.TwitterUser}})">
+            <summary>
+            Blocks the user specified as the authenticating user. Destroys a friendship to the blocked user if it exists.
+            </summary>
+            <param name="tokens">The tokens.</param>
+            <param name="userId">The user id.</param>
+            <param name="timeout">The timeout.</param>
+            <param name="function">The function.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Twitterizer.TwitterBlockAsync.Create(Twitterizer.OAuthTokens,System.String,Twitterizer.OptionalProperties,System.TimeSpan,System.Action{Twitterizer.TwitterAsyncResponse{Twitterizer.TwitterUser}})">
+            <summary>
+            Blocks the user specified as the authenticating user. Destroys a friendship to the blocked user if it exists.
+            </summary>
+            <param name="tokens">The tokens.</param>
+            <param name="screenName">The user's screen name.</param>
+            <param name="options">The options.</param>
+            <param name="timeout">The timeout.</param>
+            <param name="function">The function.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Twitterizer.TwitterBlockAsync.Create(Twitterizer.OAuthTokens,System.String,System.TimeSpan,System.Action{Twitterizer.TwitterAsyncResponse{Twitterizer.TwitterUser}})">
+            <summary>
+            Blocks the user specifiedr. Destroys a friendship to the blocked user if it exists.
+            </summary>
+            <param name="tokens">The tokens.</param>
+            <param name="screenName">The user's screen name.</param>
+            <param name="timeout">The timeout.</param>
+            <param name="function">The function.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Twitterizer.TwitterBlockAsync.Destroy(Twitterizer.OAuthTokens,System.Decimal,Twitterizer.OptionalProperties,System.TimeSpan,System.Action{Twitterizer.TwitterAsyncResponse{Twitterizer.TwitterUser}})">
+            <summary>
+            Unblocks the user specified as the authenticating user.
+            </summary>
+            <param name="tokens">The tokens.</param>
+            <param name="userId">The user id.</param>
+            <param name="options">The options.</param>
+            <param name="timeout">The timeout.</param>
+            <param name="function">The function.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Twitterizer.TwitterBlockAsync.Destroy(Twitterizer.OAuthTokens,System.Decimal,System.TimeSpan,System.Action{Twitterizer.TwitterAsyncResponse{Twitterizer.TwitterUser}})">
+            <summary>
+            Unblocks the user specified as the authenticating user.
+            </summary>
+            <param name="tokens">The tokens.</param>
+            <param name="userId">The user id.</param>
+            <param name="timeout">The timeout.</param>
+            <param name="function">The function.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Twitterizer.TwitterBlockAsync.Destroy(Twitterizer.OAuthTokens,System.String,Twitterizer.OptionalProperties,System.TimeSpan,System.Action{Twitterizer.TwitterAsyncResponse{Twitterizer.TwitterUser}})">
+            <summary>
+            Unblocks the user specified as the authenticating user.
+            </summary>
+            <param name="tokens">The tokens.</param>
+            <param name="screenName">The user's screen name.</param>
+            <param name="options">The options.</param>
+            <param name="timeout">The timeout.</param>
+            <param name="function">The function.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Twitterizer.TwitterBlockAsync.Destroy(Twitterizer.OAuthTokens,System.String,System.TimeSpan,System.Action{Twitterizer.TwitterAsyncResponse{Twitterizer.TwitterUser}})">
+            <summary>
+            Unblocks the user specifiedr.
+            </summary>
+            <param name="tokens">The tokens.</param>
+            <param name="screenName">The user's screen name.</param>
+            <param name="timeout">The timeout.</param>
+            <param name="function">The function.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Twitterizer.TwitterBlockAsync.Exists(Twitterizer.OAuthTokens,System.Decimal,Twitterizer.OptionalProperties,System.TimeSpan,System.Action{Twitterizer.TwitterAsyncResponse{Twitterizer.TwitterUser}})">
+            <summary>
+            Checks for a block against the the user specified as the authenticating user.
+            </summary>
+            <param name="tokens">The tokens.</param>
+            <param name="userId">The user id.</param>
+            <param name="options">The options.</param>
+            <param name="timeout">The timeout.</param>
+            <param name="function">The function.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Twitterizer.TwitterBlockAsync.Exists(Twitterizer.OAuthTokens,System.Decimal,System.TimeSpan,System.Action{Twitterizer.TwitterAsyncResponse{Twitterizer.TwitterUser}})">
+            <summary>
+            Checks for a block against the user specified as the authenticating user.
+            </summary>
+            <param name="tokens">The tokens.</param>
+            <param name="userId">The user id.</param>
+            <param name="timeout">The timeout.</param>
+            <param name="function">The function.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Twitterizer.TwitterBlockAsync.Exists(Twitterizer.OAuthTokens,System.String,Twitterizer.OptionalProperties,System.TimeSpan,System.Action{Twitterizer.TwitterAsyncResponse{Twitterizer.TwitterUser}})">
+            <summary>
+            Checks for a block against the the user specified as the authenticating user.
+            </summary>
+            <param name="tokens">The tokens.</param>
+            <param name="screenName">The user's screen name.</param>
+            <param name="options">The options.</param>
+            <param name="timeout">The timeout.</param>
+            <param name="function">The function.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Twitterizer.TwitterBlockAsync.Exists(Twitterizer.OAuthTokens,System.String,System.TimeSpan,System.Action{Twitterizer.TwitterAsyncResponse{Twitterizer.TwitterUser}})">
+            <summary>
+            Checks for a block against the the user specifiedr.
+            </summary>
+            <param name="tokens">The tokens.</param>
+            <param name="screenName">The user's screen name.</param>
+            <param name="timeout">The timeout.</param>
+            <param name="function">The function.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Twitterizer.TwitterBlockAsync.BlockingIds(Twitterizer.OAuthTokens,Twitterizer.OptionalProperties,System.TimeSpan,System.Action{Twitterizer.TwitterAsyncResponse{Twitterizer.TwitterIdCollection}})">
+            <summary>
+            Returns an collection of user ids the authenticating user is blocking.
+            </summary>
+            <param name="tokens">The tokens.</param>
+            <param name="options">The options.</param>
+            <param name="timeout">The timeout.</param>
+            <param name="function">The function.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Twitterizer.TwitterTimelineAsync.HomeTimeline(Twitterizer.OAuthTokens,Twitterizer.TimelineOptions,System.TimeSpan,System.Action{Twitterizer.TwitterAsyncResponse{Twitterizer.TwitterStatusCollection}})">
+            <summary>
+            Homes the timeline.
+            </summary>
+            <param name="tokens">The tokens.</param>
+            <param name="options">The options.</param>
+            <param name="timeout">The timeout.</param>
+            <param name="function">The function.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Twitterizer.TwitterTimelineAsync.Mentions(Twitterizer.OAuthTokens,Twitterizer.TimelineOptions,System.TimeSpan,System.Action{Twitterizer.TwitterAsyncResponse{Twitterizer.TwitterStatusCollection}})">
+            <summary>
+            Returns the 20 most recent mentions (status containing @username) for the authenticating user.
+            </summary>
+            <param name="tokens">The tokens.</param>
+            <param name="options">The options.</param>
+            <param name="timeout">The timeout.</param>
+            <param name="function">The function.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Twitterizer.TwitterTimelineAsync.PublicTimeline(Twitterizer.OAuthTokens,Twitterizer.OptionalProperties,System.TimeSpan,System.Action{Twitterizer.TwitterAsyncResponse{Twitterizer.TwitterStatusCollection}})">
+            <summary>
+            Gets the public timeline.
+            </summary>
+            <param name="tokens">The tokens.</param>
+            <param name="options">The options.</param>
+            <param name="timeout">The timeout.</param>
+            <param name="function">The function.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Twitterizer.TwitterTimelineAsync.PublicTimeline(Twitterizer.OptionalProperties,System.TimeSpan,System.Action{Twitterizer.TwitterAsyncResponse{Twitterizer.TwitterStatusCollection}})">
+            <summary>
+            Gets the public timeline.
+            </summary>
+            <param name="options">The options.</param>
+            <param name="timeout">The timeout.</param>
+            <param name="function">The function.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Twitterizer.TwitterTimelineAsync.RetweetedByMe(Twitterizer.OAuthTokens,Twitterizer.TimelineOptions,System.TimeSpan,System.Action{Twitterizer.TwitterAsyncResponse{Twitterizer.TwitterStatusCollection}})">
+            <summary>
+            Returns the 20 most recent retweets posted by the authenticating user.
+            </summary>
+            <param name="tokens">The tokens.</param>
+            <param name="options">The options.</param>
+            <param name="timeout">The timeout.</param>
+            <param name="function">The function.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Twitterizer.TwitterTimelineAsync.RetweetedToMe(Twitterizer.OAuthTokens,Twitterizer.TimelineOptions,System.TimeSpan,System.Action{Twitterizer.TwitterAsyncResponse{Twitterizer.TwitterStatusCollection}})">
+            <summary>
+            Returns the 20 most recent retweets posted by the authenticating user's friends.
+            </summary>
+            <param name="tokens">The tokens.</param>
+            <param name="options">The options.</param>
+            <param name="timeout">The timeout.</param>
+            <param name="function">The function.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Twitterizer.TwitterTimelineAsync.RetweetsOfMe(Twitterizer.OAuthTokens,Twitterizer.RetweetsOfMeOptions,System.TimeSpan,System.Action{Twitterizer.TwitterAsyncResponse{Twitterizer.TwitterStatusCollection}})">
+            <summary>
+            Returns the 20 most recent tweets of the authenticated user that have been retweeted by others.
+            </summary>
+            <param name="tokens">The tokens.</param>
+            <param name="options">The options.</param>
+            <param name="timeout">The timeout.</param>
+            <param name="function">The function.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Twitterizer.TwitterTimelineAsync.UserTimeline(Twitterizer.OAuthTokens,Twitterizer.UserTimelineOptions,System.TimeSpan,System.Action{Twitterizer.TwitterAsyncResponse{Twitterizer.TwitterStatusCollection}})">
+            <summary>
+            Returns the 20 most recent statuses posted by the authenticating user. It is also possible to request another user's timeline by using the screen_name or user_id parameter.
+            </summary>
+            <param name="tokens">The tokens.</param>
+            <param name="options">The options.</param>
+            <param name="timeout">The timeout.</param>
+            <param name="function">The function.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Twitterizer.TwitterFavoriteAsync.Create(Twitterizer.OAuthTokens,System.Decimal,Twitterizer.OptionalProperties,System.TimeSpan,System.Action{Twitterizer.TwitterAsyncResponse{Twitterizer.TwitterStatus}})">
+            <summary>
+            Favorites the status specified in the ID parameter as the authenticating user.
+            </summary>
+            <param name="tokens">The tokens.</param>
+            <param name="statusId">The status id.</param>
+            <param name="options">The options.</param>
+            <param name="timeout">The timeout.</param>
+            <param name="function">The function.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Twitterizer.TwitterFavoriteAsync.Delete(Twitterizer.OAuthTokens,System.Decimal,Twitterizer.OptionalProperties,System.TimeSpan,System.Action{Twitterizer.TwitterAsyncResponse{Twitterizer.TwitterStatus}})">
+            <summary>
+            Un-favorites the status specified in the ID parameter as the authenticating user.
+            </summary>
+            <param name="tokens">The tokens.</param>
+            <param name="statusId">The status id.</param>
+            <param name="options">The options.</param>
+            <param name="timeout">The timeout.</param>
+            <param name="function">The function.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Twitterizer.TwitterFavoriteAsync.List(Twitterizer.OAuthTokens,Twitterizer.ListFavoritesOptions,System.TimeSpan,System.Action{Twitterizer.TwitterAsyncResponse{Twitterizer.TwitterStatusCollection}})">
+            <summary>
+            Returns the 20 most recent favorite statuses for the authenticating user or user specified by the ID parameter in the requested format.
+            </summary>
+            <param name="tokens">The tokens.</param>
+            <param name="options">The options.</param>
+            <param name="timeout">The timeout.</param>
+            <param name="function">The function.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Twitterizer.TwitterAccountAsync.GetStatus(Twitterizer.OAuthTokens,Twitterizer.OptionalProperties,System.TimeSpan,System.Action{Twitterizer.TwitterAsyncResponse{Twitterizer.TwitterRateLimitStatus}})">
+            <summary>
+            Gets the rate limiting status status for the authenticated user asynchronously.
+            </summary>
+            <param name="tokens">The OAuth tokens.</param>
+            <param name="options">The options.</param>
+            <param name="timeout">The timeout.</param>
+            <param name="function">The callback or anonymous funtion.</param>
+            <returns>
+            A <see cref="T:Twitterizer.TwitterRateLimitStatus"/> instance.
+            </returns>
+        </member>
+        <member name="M:Twitterizer.TwitterAccountAsync.VerifyCredentials(Twitterizer.OAuthTokens,System.TimeSpan,System.Action{Twitterizer.TwitterAsyncResponse{Twitterizer.TwitterUser}})">
+            <summary>
+            Attempts to verify the supplied credentials.
+            </summary>
+            <param name="tokens">The tokens.</param>  
+            <param name="timeout">The timeout.</param>
+            <param name="function">The callback or anonymous funtion.</param>
+            <returns>
+            The user, as a <see cref="T:Twitterizer.TwitterUser"/>
+            </returns>       
+        </member>
+        <member name="M:Twitterizer.TwitterAccountAsync.VerifyCredentials(Twitterizer.OAuthTokens,Twitterizer.VerifyCredentialsOptions,System.TimeSpan,System.Action{Twitterizer.TwitterAsyncResponse{Twitterizer.TwitterUser}})">
+            <summary>
+            Attempts to verify the supplied credentials.
+            </summary>
+            <param name="tokens">The tokens.</param>  
+            <param name="options">The options.</param>
+            <param name="timeout">The timeout.</param>
+            <param name="function">The callback or anonymous funtion.</param>
+            <returns>
+            The user, as a <see cref="T:Twitterizer.TwitterUser"/>
+            </returns>       
+        </member>
+        <member name="M:Twitterizer.TwitterAccountAsync.UpdateProfileImage(Twitterizer.OAuthTokens,System.String,System.TimeSpan,System.Action{Twitterizer.TwitterAsyncResponse{Twitterizer.TwitterUser}},Twitterizer.OptionalProperties)">
+            <summary>
+            Updates the authenticating user's profile image. Note that this method expects raw multipart data, not a URL to an image.
+            </summary>
+            <param name="tokens">The tokens.</param>
+            <param name="imageLocation">The image location.</param>
+            <param name="options">The options.</param>
+            <param name="timeout">The timeout.</param>
+            <param name="function">The callback or anonymous funtion.</param>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:Twitterizer.TwitterAccountAsync.UpdateProfileImage(Twitterizer.OAuthTokens,System.Byte[],System.TimeSpan,System.Action{Twitterizer.TwitterAsyncResponse{Twitterizer.TwitterUser}},Twitterizer.OptionalProperties)">
+            <summary>
+            Updates the authenticating user's profile image. Note that this method expects raw multipart data, not a URL to an image.
+            </summary>
+            <param name="tokens">The tokens.</param>
+            <param name="imageData">The image data.</param>
+            <param name="timeout">The timeout.</param>
+            <param name="function">The callback or anonymous funtion.</param>
+            <param name="options">The options.</param>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:Twitterizer.TwitterAccountAsync.UpdateProfileBackgroundImage(Twitterizer.OAuthTokens,System.String,System.TimeSpan,System.Action{Twitterizer.TwitterAsyncResponse{Twitterizer.TwitterUser}},Twitterizer.UpdateProfileBackgroundImageOptions)">
+            <summary>
+            Updates the authenticating user's profile background image. This method can also be used to enable or disable the profile background image.
+            </summary>
+            <param name="tokens">The tokens.</param>
+            <param name="fileLocation">The file location.</param>
+            <param name="timeout">The timeout.</param>
+            <param name="function">The function.</param>
+            <param name="options">The options.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Twitterizer.TwitterAccountAsync.UpdateProfileBackgroundImage(Twitterizer.OAuthTokens,System.Byte[],System.TimeSpan,System.Action{Twitterizer.TwitterAsyncResponse{Twitterizer.TwitterUser}},Twitterizer.UpdateProfileBackgroundImageOptions)">
+            <summary>
+            Updates the authenticating user's profile background image. This method can also be used to enable or disable the profile background image.
+            </summary>
+            <param name="tokens">The tokens.</param>
+            <param name="imageData">The image data.</param>
+            <param name="timeout">The timeout.</param>
+            <param name="function">The function.</param>
+            <param name="options">The options.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Twitterizer.TwitterFriendshipAsync.Create(Twitterizer.OAuthTokens,System.String,Twitterizer.CreateFriendshipOptions,System.TimeSpan,System.Action{Twitterizer.TwitterAsyncResponse{Twitterizer.TwitterUser}})">
+            <summary>
+            Allows the authenticating users to follow the user specified in the userName parameter.
+            </summary>
+            <param name="tokens">The tokens.</param>
+            <param name="userName">The user name.</param>
+            <param name="options">The options.</param>   
+            <param name="timeout">The timeout.</param>
+            <param name="function">The callback function.</param>        
+        </member>
+        <member name="M:Twitterizer.TwitterFriendshipAsync.Delete(Twitterizer.OAuthTokens,System.String,Twitterizer.OptionalProperties,System.TimeSpan,System.Action{Twitterizer.TwitterAsyncResponse{Twitterizer.TwitterUser}})">
+            <summary>
+            Allows the authenticating users to unfollow the user specified in the ID parameter.
+            </summary>
+            <param name="tokens">The tokens.</param>
+            <param name="userName">The username.</param>
+            <param name="options">The options.</param>  
+            <param name="timeout">The timeout.</param>
+            <param name="function">The callback function.</param>
+        </member>
+        <member name="M:Twitterizer.TwitterFriendshipAsync.Show(Twitterizer.OAuthTokens,System.String,Twitterizer.OptionalProperties,System.TimeSpan,System.Action{Twitterizer.TwitterAsyncResponse{Twitterizer.TwitterRelationship}})">
+            <summary>
+            Returns detailed information about the relationship between two users.
+            </summary>
+            <param name="tokens">The tokens.</param>
+            <param name="targetUserName">The target user name.</param>
+            <param name="options">The options.</param>
+            <param name="timeout">The timeout.</param>
+            <param name="function">The callback function.</param>
+        </member>
+        <member name="M:Twitterizer.TwitterFriendshipAsync.FriendsIds(Twitterizer.OAuthTokens,Twitterizer.UsersIdsOptions,System.TimeSpan,System.Action{Twitterizer.TwitterAsyncResponse{Twitterizer.UserIdCollection}})">
+            <summary>
+            Returns the numeric IDs for every user the specified user is friends with.
+            </summary>
+            <param name="tokens">The tokens.</param>
+            <param name="options">The options.</param>
+            <param name="timeout">The timeout.</param>
+            <param name="function">The function.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Twitterizer.TwitterFriendshipAsync.FriendsIds(Twitterizer.OAuthTokens,System.TimeSpan,System.Action{Twitterizer.TwitterAsyncResponse{Twitterizer.UserIdCollection}})">
+            <summary>
+            Returns the numeric IDs for every user the specified user is friends with.
+            </summary>
+            <param name="tokens">The tokens.</param>
+            <param name="timeout">The timeout.</param>
+            <param name="function">The function.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Twitterizer.TwitterFriendshipAsync.FollowersIds(Twitterizer.OAuthTokens,Twitterizer.UsersIdsOptions,System.TimeSpan,System.Action{Twitterizer.TwitterAsyncResponse{Twitterizer.UserIdCollection}})">
+            <summary>
+            Returns the numeric IDs for every user the specified user is following.
+            </summary>
+            <param name="tokens">The tokens.</param>
+            <param name="options">The options.</param>
+            <param name="timeout">The timeout.</param>
+            <param name="function">The function.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Twitterizer.TwitterFriendshipAsync.FollowersIds(Twitterizer.OAuthTokens,System.TimeSpan,System.Action{Twitterizer.TwitterAsyncResponse{Twitterizer.UserIdCollection}})">
+            <summary>
+            Returns the numeric IDs for every user the specified user is following.
+            </summary>
+            <param name="tokens">The tokens.</param>
+            <param name="timeout">The timeout.</param>
+            <param name="function">The function.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Twitterizer.TwitterFriendshipAsync.IncomingRequests(Twitterizer.OAuthTokens,Twitterizer.IncomingFriendshipsOptions,System.TimeSpan,System.Action{Twitterizer.TwitterAsyncResponse{Twitterizer.TwitterCursorPagedIdCollection}})">
+            <summary>
+            Returns a collection of IDs for every user who has a pending request to follow the authenticating user.
+            </summary>
+            <param name="tokens">The tokens.</param>
+            <param name="timeout">The timeout.</param>
+            <param name="function">The function.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Twitterizer.TwitterFriendshipAsync.OutgoingRequests(Twitterizer.OAuthTokens,Twitterizer.OutgoingFriendshipsOptions,System.TimeSpan,System.Action{Twitterizer.TwitterAsyncResponse{Twitterizer.TwitterCursorPagedIdCollection}})">
+            <summary>
+            Returns a collection of IDs for every protected user for whom the authenticating user has a pending follow request.
+            </summary>
+            <param name="tokens">The tokens.</param>
+            <param name="timeout">The timeout.</param>
+            <param name="function">The function.</param>
+            <returns></returns>
+        </member>
+        <member name="P:Twitterizer.TwitterAsyncResponse`1.ExceptionThrown">
+            <summary>
+            Gets or sets the exception.
+            </summary>
+            <value>The exception.</value>
+        </member>
+        <member name="M:Twitterizer.TwitterStatusAsync.Delete(Twitterizer.OAuthTokens,System.Decimal,Twitterizer.OptionalProperties,System.TimeSpan,System.Action{Twitterizer.TwitterAsyncResponse{Twitterizer.TwitterStatus}})">
+            <summary>
+            Deletes the specified status.
+            </summary>
+            <param name="tokens">The tokens.</param>
+            <param name="id">The id.</param>
+            <param name="options">The options.</param>
+            <param name="timeout">The timeout.</param>
+            <param name="function">The function.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Twitterizer.TwitterStatusAsync.Retweet(Twitterizer.OAuthTokens,System.Decimal,Twitterizer.OptionalProperties,System.TimeSpan,System.Action{Twitterizer.TwitterAsyncResponse{Twitterizer.TwitterStatus}})">
+            <summary>
+            Retweets a tweet. Requires the id parameter of the tweet you are retweeting. (say that 5 times fast)
+            </summary>
+            <param name="tokens">The tokens.</param>
+            <param name="statusId">The status id.</param>
+            <param name="options">The options.</param>
+            <param name="timeout">The timeout.</param>
+            <param name="function">The function.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Twitterizer.TwitterStatusAsync.Retweets(Twitterizer.OAuthTokens,System.Decimal,Twitterizer.RetweetsOptions,System.TimeSpan,System.Action{Twitterizer.TwitterAsyncResponse{Twitterizer.TwitterStatusCollection}})">
+            <summary>
+            Returns up to 100 of the first retweets of a given tweet.
+            </summary>
+            <param name="tokens">The tokens.</param>
+            <param name="statusId">The status id.</param>
+            <param name="options">The options.</param>
+            <param name="timeout">The timeout.</param>
+            <param name="function">The function.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Twitterizer.TwitterStatusAsync.Show(Twitterizer.OAuthTokens,System.Decimal,Twitterizer.OptionalProperties,System.TimeSpan,System.Action{Twitterizer.TwitterAsyncResponse{Twitterizer.TwitterStatus}})">
+            <summary>
+            Returns a single status, with user information, specified by the id parameter.
+            </summary>
+            <param name="tokens">The tokens.</param>
+            <param name="statusId">The status id.</param>
+            <param name="options">The options.</param>
+            <param name="timeout">The timeout.</param>
+            <param name="function">The function.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Twitterizer.TwitterStatusAsync.Update(Twitterizer.OAuthTokens,System.String,Twitterizer.StatusUpdateOptions,System.TimeSpan,System.Action{Twitterizer.TwitterAsyncResponse{Twitterizer.TwitterStatus}})">
+            <summary>
+            Updates the authenticating user's status. A status update with text identical to the authenticating user's text identical to the authenticating user's current status will be ignored to prevent duplicates.
+            </summary>
+            <param name="tokens">The tokens.</param>
+            <param name="text">The text.</param>
+            <param name="options">The options.</param>
+            <param name="timeout">The timeout.</param>
+            <param name="function">The function.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Twitterizer.XAuthUtilityAsync.GetAccessTokens(System.String,System.String,System.String,System.String,System.TimeSpan,System.Action{Twitterizer.OAuthTokenResponse})">
+            <summary>
+            Allows OAuth applications to directly exchange Twitter usernames and passwords for OAuth access tokens and secrets.
+            </summary>
+            <param name="consumerKey">The consumer key.</param>
+            <param name="consumerSecret">The consumer secret.</param>
+            <param name="username">The username.</param>
+            <param name="password">The password.</param>
+            <param name="timeout">The timeout.</param>
+            <param name="function">The function.</param>
+            <returns>A <see cref="T:Twitterizer.OAuthTokenResponse"/> instance.</returns>        
+        </member>
+        <member name="M:Twitterizer.OAuthUtilityAsync.GetRequestToken(System.String,System.String,System.String,System.Net.WebProxy,System.TimeSpan,System.Action{Twitterizer.OAuthTokenResponse})">
+            <summary>
+            Gets a new OAuth request token from the twitter api.
+            </summary>
+            <param name="consumerKey">The consumer key.</param>
+            <param name="consumerSecret">The consumer secret.</param>
+            <param name="callbackAddress">Address of the callback.</param>
+            <param name="proxy">The proxy.</param>
+            <param name="timeout">The timeout.</param>
+            <param name="function">The function.</param>
+            <returns>
+            A new <see cref="T:Twitterizer.OAuthTokenResponse"/> instance.
+            </returns>
+        </member>
+        <member name="M:Twitterizer.OAuthUtilityAsync.GetAccessToken(System.String,System.String,System.String,System.String,System.Net.WebProxy,System.TimeSpan,System.Action{Twitterizer.OAuthTokenResponse})">
+            <summary>
+            Gets the access token.
+            </summary>
+            <param name="consumerKey">The consumer key.</param>
+            <param name="consumerSecret">The consumer secret.</param>
+            <param name="requestToken">The request token.</param>
+            <param name="verifier">The verifier.</param>
+            <param name="proxy">The proxy.</param>
+            <param name="timeout">The timeout.</param>
+            <param name="function">The function.</param>
+            <returns>An <see cref="T:Twitterizer.OAuthTokenResponse"/> class containing access token information.</returns>
+        </member>
+        <member name="M:Twitterizer.TwitterSavedSearchAsync.Create(Twitterizer.OAuthTokens,System.String,Twitterizer.OptionalProperties,System.TimeSpan,System.Action{Twitterizer.TwitterAsyncResponse{Twitterizer.TwitterSavedSearch}})">
+            <summary>
+            Creates the saved search specified in the query parameter as the authenticating user.
+            </summary>
+            <param name="tokens">The tokens.</param>
+            <param name="query">The query.</param>
+            <param name="options">The options.</param>
+            <param name="timeout">The timeout.</param>
+            <param name="function">The function.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Twitterizer.TwitterSavedSearchAsync.Delete(Twitterizer.OAuthTokens,System.Decimal,Twitterizer.OptionalProperties,System.TimeSpan,System.Action{Twitterizer.TwitterAsyncResponse{Twitterizer.TwitterSavedSearch}})">
+            <summary>
+            Deletes the saved search specified in the ID parameter as the authenticating user.
+            </summary>
+            <param name="tokens">The tokens.</param>
+            <param name="statusId">The saved search id.</param>
+            <param name="options">The options.</param>
+            <param name="timeout">The timeout.</param>
+            <param name="function">The function.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Twitterizer.TwitterSavedSearchAsync.SavedSearches(Twitterizer.OAuthTokens,Twitterizer.OptionalProperties,System.TimeSpan,System.Action{Twitterizer.TwitterAsyncResponse{Twitterizer.TwitterSavedSearchCollection}})">
+            <summary>
+            Returns the saves searches for the authenticating user or user in the requested format.
+            </summary>
+            <param name="tokens">The tokens.</param>
+            <param name="options">The options.</param>
+            <param name="timeout">The timeout.</param>
+            <param name="function">The function.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Twitterizer.TwitterPlaceAsync.Lookup(System.Double,System.Double,Twitterizer.TwitterPlaceLookupOptions,System.TimeSpan,System.Action{Twitterizer.TwitterAsyncResponse{Twitterizer.TwitterPlaceCollection}})">
+            <summary>
+            Retrieves a place based on the specified coordinates.
+            </summary>
+            <param name="latitude">The latitude.</param>
+            <param name="longitude">The longitude.</param>
+            <param name="options">The options.</param>
+            <param name="timeout">The timeout.</param>
+            <param name="function">The function.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Twitterizer.TwitterUserAsync.Lookup(Twitterizer.OAuthTokens,Twitterizer.LookupUsersOptions,System.TimeSpan,System.Action{Twitterizer.TwitterAsyncResponse{Twitterizer.TwitterUserCollection}})">
+            <summary>
+            Return up to 100 users worth of extended information, specified by either ID, screen name, or combination of the two.
+            </summary>
+            <param name="tokens">The tokens.</param>
+            <param name="options">The options.</param>
+            <param name="timeout">The timeout.</param>
+            <param name="function">The function.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Twitterizer.TwitterUserAsync.Search(Twitterizer.OAuthTokens,System.String,Twitterizer.UserSearchOptions,System.TimeSpan,System.Action{Twitterizer.TwitterAsyncResponse{Twitterizer.TwitterUserCollection}})">
+            <summary>
+            Runs a search for users similar to Find People button on Twitter.com. The results returned by people search on Twitter.com are the same as those returned by this API request.
+            </summary>
+            <param name="tokens">The tokens.</param>
+            <param name="query">The query.</param>
+            <param name="options">The options.</param>
+            <param name="timeout">The timeout.</param>
+            <param name="function">The function.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Twitterizer.TwitterUserAsync.Show(Twitterizer.OAuthTokens,System.String,Twitterizer.OptionalProperties,System.TimeSpan,System.Action{Twitterizer.TwitterAsyncResponse{Twitterizer.TwitterUser}})">
+            <summary>
+            Shows the specified username.
+            </summary>
+            <param name="tokens">The tokens.</param>
+            <param name="username">The username.</param>
+            <param name="options">The options.</param>
+            <param name="timeout">The timeout.</param>
+            <param name="function">The function.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Twitterizer.TwitterUserAsync.Show(System.String,Twitterizer.OptionalProperties,System.TimeSpan,System.Action{Twitterizer.TwitterAsyncResponse{Twitterizer.TwitterUser}})">
+            <summary>
+            Shows the specified username.
+            </summary>
+            <param name="username">The username.</param>
+            <param name="options">The options.</param>
+            <param name="timeout">The timeout.</param>
+            <param name="function">The function.</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FavCas", "FavCas\FavCas.csproj", "{010E5F28-6E02-4663-8049-84FE42C063C2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8756CD0D-C672-4F02-96B6-A5B939E1D8D7}"
+	ProjectSection(SolutionItems) = preProject
+		README = README
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{010E5F28-6E02-4663-8049-84FE42C063C2}.Debug|x86.ActiveCfg = Debug|x86
+		{010E5F28-6E02-4663-8049-84FE42C063C2}.Debug|x86.Build.0 = Debug|x86
+		{010E5F28-6E02-4663-8049-84FE42C063C2}.Release|x86.ActiveCfg = Release|x86
+		{010E5F28-6E02-4663-8049-84FE42C063C2}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
