@@ -184,6 +184,16 @@ namespace FavCas
             timeline.Add(status);
         }
 
+        void Favorite(TwitterStatus status)
+        {
+            TwitterFavorite.Create(tokens, status.Id);
+        }
+
+        void Unfavorite(TwitterStatus status)
+        {
+            TwitterFavorite.Delete(tokens, status.Id);
+        }
+
         Authentication GetAuthenticationData()
         {
             Authentication auth = new Authentication();
@@ -319,26 +329,17 @@ namespace FavCas
             }
         }
 
-        #region コマンド実装
-        private void FavoriteCommand_CanExecute(object sender, CanExecuteRoutedEventArgs e)
+        private void timeLineView_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
         {
-            e.CanExecute = true;
+            var item = (ListViewItem)sender;
+            if (item != null)
+            {
+                var status = (TwitterStatus)item.DataContext;
+                if (status.IsFavorited.HasValue && status.IsFavorited.Value)
+                    Unfavorite(status);
+                else
+                    Favorite(status);
+            }
         }
-
-        private void FavoriteCommand_Executed(object sender, ExecutedRoutedEventArgs e)
-        {
-            // favorite
-        }
-
-        private void UnfavoriteCommand_CanExecute(object sender, CanExecuteRoutedEventArgs e)
-        {
-            e.CanExecute = true;
-        }
-
-        private void UnfavoriteCommand_Executed(object sender, ExecutedRoutedEventArgs e)
-        {
-            // unfavorite
-        }
-        #endregion
     }
 }
