@@ -213,6 +213,18 @@ namespace FavCas
             TwitterFavorite.Delete(tokens, status.Id);
         }
 
+        void Retweet(TwitterStatus status)
+        {
+            if (!status.Retweeted)
+                status.Retweet(tokens);
+        }
+
+        void CancelRetweet(TwitterStatus status)
+        {
+            if (status.Retweeted)
+                status.Delete(tokens);
+        }
+
         Authentication GetAuthenticationData()
         {
             Authentication auth = new Authentication();
