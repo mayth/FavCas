@@ -4,6 +4,10 @@ May Akizuru - @maytheplic
 
 FavCas is a client specializing in fav.
 
+Requirements:
+ * Windows Vista or later
+ * .NET Framework 4 or later
+
 Features:
  * FavCas has ability to fav and retweet ONLY
  * Keyboard binding is fully customizable
