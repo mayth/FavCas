@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+ * Copyright (c) 2012 mayth
+ * FavCas is released under the MIT license.
+ * The Full-text of the license is included in License.txt.
+ */
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

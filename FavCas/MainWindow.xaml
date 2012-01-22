@@ -1,4 +1,9 @@
-﻿<Window
+﻿<!--
+Copyright (c) 2012 mayth
+FavCas is released under the MIT license.
+The Full-text of the license is included in License.txt.
+-->
+    <Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:fc="clr-namespace:FavCas"
