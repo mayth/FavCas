@@ -22,12 +22,12 @@
         <!-- TimeLine View -->
         <ListView x:Name="timeLineView" Grid.Row="0"
                   SelectionChanged="timeLineView_SelectionChanged">
-        	<ListView.Resources>
-        		<Style TargetType="{x:Type ListViewItem}">
-        			<Setter Property="BorderBrush" Value="Gray" />
-        			<EventSetter Event="UIElement.MouseRightButtonDown" Handler="timeLineView_MouseRightButtonDown" />
-        		</Style>
-        	</ListView.Resources>
+            <ListView.ItemContainerStyle>
+                <Style TargetType="{x:Type ListViewItem}">
+                    <Setter Property="BorderBrush" Value="Gray" />
+                    <EventSetter Event="PreviewMouseRightButtonDown" Handler="timeLineView_MouseRightButtonDown" />
+                </Style>
+            </ListView.ItemContainerStyle>
             <ListView.View>
                 <GridView>
                 	<GridViewColumn Width="32">
