@@ -205,24 +205,24 @@ namespace FavCas
 
         void Favorite(TwitterStatus status)
         {
-            TwitterFavorite.Create(tokens, status.Id);
+            TwitterFavoriteAsync.Create(tokens, status.Id, null, TimeSpan.FromSeconds(10), res => { });
         }
 
         void Unfavorite(TwitterStatus status)
         {
-            TwitterFavorite.Delete(tokens, status.Id);
+            TwitterFavoriteAsync.Delete(tokens, status.Id, null, TimeSpan.FromSeconds(10), res => { });
         }
 
         void Retweet(TwitterStatus status)
         {
             if (!status.Retweeted)
-                status.Retweet(tokens);
+                TwitterStatusAsync.Retweet(tokens, status.Id, null, TimeSpan.FromSeconds(10), res => { });
         }
 
         void CancelRetweet(TwitterStatus status)
         {
             if (status.Retweeted)
-                status.Delete(tokens);
+                TwitterStatusAsync.Delete(tokens, status.Id, null, TimeSpan.FromSeconds(10), res => { });
         }
 
         Authentication GetAuthenticationData()
@@ -232,7 +232,7 @@ namespace FavCas
             {
                 OAuthTokenResponse requestToken = OAuthUtility.GetRequestToken(Properties.Resources.ConsumerKey, Properties.Resources.ConsumerSecret, "oob");
                 Uri authUri = OAuthUtility.BuildAuthorizationUri(requestToken.Token);
-                string pinCode;
+                string pinCode = null;
 
                 var dispatcher = Application.Current.Dispatcher;
                 if (dispatcher.CheckAccess())
@@ -241,7 +241,7 @@ namespace FavCas
                 }
                 else
                 {
-                    pinCode = dispatcher.Invoke(new Action(() => ShowAuthorizeWindow(authUri)), null) as string;
+                    dispatcher.Invoke(new Action(() => pinCode = ShowAuthorizeWindow(authUri)), null);
                 }
                 if (!string.IsNullOrEmpty(pinCode))
                 {
