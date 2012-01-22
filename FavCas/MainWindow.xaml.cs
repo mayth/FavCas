@@ -376,17 +376,32 @@ namespace FavCas
             }
         }
 
-        private void timeLineView_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
+        private void timeLineView_MouseDown(object sender, MouseButtonEventArgs e)
         {
             var item = (ListViewItem)sender;
             if (item != null)
             {
                 var status = (TwitterStatus)item.DataContext;
-                if (status.IsFavorited.HasValue && status.IsFavorited.Value)
-                    Unfavorite(status);
-                else
-                    Favorite(status);
+                switch (e.ChangedButton)
+                {
+                    case MouseButton.Left:
+                        if (status.IsFavorited.HasValue && status.IsFavorited.Value)
+                            Unfavorite(status);
+                        else
+                            Favorite(status);
+                        break;
+                    case MouseButton.Right:
+                        if (status.Retweeted)
+                            CancelRetweet(status);
+                        else
+                            Retweet(status);
+                        break;
+                    case MouseButton.Middle:
+                        timeLineView.SelectedItem = item.DataContext;
+                        break;
+                }
             }
+            e.Handled = true;
         }
     }
 }

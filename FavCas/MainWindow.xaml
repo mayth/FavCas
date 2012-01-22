@@ -25,7 +25,7 @@
             <ListView.ItemContainerStyle>
                 <Style TargetType="{x:Type ListViewItem}">
                     <Setter Property="BorderBrush" Value="Gray" />
-                    <EventSetter Event="PreviewMouseRightButtonDown" Handler="timeLineView_MouseRightButtonDown" />
+                    <EventSetter Event="PreviewMouseDown" Handler="timeLineView_MouseDown" />
                 </Style>
             </ListView.ItemContainerStyle>
             <ListView.View>
