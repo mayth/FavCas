@@ -16,6 +16,7 @@ using System.Windows.Shapes;
 using System.Xml.Linq;
 using System.Net;
 using System.IO;
+using System.Threading.Tasks;
 using System.Diagnostics.Contracts;
 using Twitterizer;
 
@@ -54,15 +55,33 @@ namespace FavCas
             startWindow.Show();
             this.Visibility = System.Windows.Visibility.Hidden;
 
-            // 認証情報を読み込む（認証情報がなければ認証する）
-            var authTask = System.Threading.Tasks.Task.Factory.StartNew(
-                () =>
+            var startupTask = Task.Factory.StartNew(() =>
                 {
-                    Authenticate();
-                    startWindow.Complete(StartSequenceElement.LoadCredential);
-                });
-            var contTask = authTask.ContinueWith(task =>
-                {
+                    // 認証情報を読み込む（認証情報がなければ認証する）
+                    var authTask = System.Threading.Tasks.Task.Factory.StartNew(
+                        () =>
+                        {
+                            if (Authenticate())
+                                startWindow.Complete(StartSequenceElement.LoadCredential);
+                            else
+                                throw new AuthenticationFailureException();
+                        });
+
+                    try
+                    {
+                        authTask.Wait();
+                    }
+                    catch (AggregateException ae)
+                    {
+                        foreach (var ie in ae.InnerExceptions)
+                        {
+                            if (ie is AuthenticationFailureException)
+                            {
+                                this.Dispatcher.Invoke(new Action(() => Application.Current.Shutdown()), null);
+                                return;
+                            }
+                        }
+                    }
                     var verifyTask = System.Threading.Tasks.Task.Factory.StartNew(
                         () =>
                         {
@@ -152,13 +171,12 @@ namespace FavCas
             currentUser = verifyResult.ResponseObject;
         }
 
-        private void Authenticate()
+        private bool Authenticate()
         {
             Authentication auth = GetAuthenticationData();
             if (auth == null)
             {
-                Application.Current.Shutdown();
-                return;
+                return false;
             }
             tokens = new OAuthTokens()
             {
@@ -167,6 +185,7 @@ namespace FavCas
                 AccessToken = auth.Token,
                 AccessTokenSecret = auth.TokenSecret
             };
+            return true;
         }
 
         void StatusCreatedCallback(TwitterStatus status)
@@ -201,15 +220,20 @@ namespace FavCas
             {
                 OAuthTokenResponse requestToken = OAuthUtility.GetRequestToken(Properties.Resources.ConsumerKey, Properties.Resources.ConsumerSecret, "oob");
                 Uri authUri = OAuthUtility.BuildAuthorizationUri(requestToken.Token);
+                string pinCode;
 
-                AuthorizeWindow authWindow = new AuthorizeWindow();
-                authWindow.AuthUri = authUri;
-                authWindow.Owner = this;
-                if (authWindow.ShowDialog().Value)
+                var dispatcher = Application.Current.Dispatcher;
+                if (dispatcher.CheckAccess())
                 {
-                    // PINコードを受け取った
-                    string pin = authWindow.PinCode;
-                    OAuthTokenResponse accessToken = OAuthUtility.GetAccessToken(Properties.Resources.ConsumerKey, Properties.Resources.ConsumerSecret, requestToken.Token, pin);
+                    pinCode = ShowAuthorizeWindow(authUri);
+                }
+                else
+                {
+                    pinCode = dispatcher.Invoke(new Action(() => ShowAuthorizeWindow(authUri)), null) as string;
+                }
+                if (!string.IsNullOrEmpty(pinCode))
+                {
+                    OAuthTokenResponse accessToken = OAuthUtility.GetAccessToken(Properties.Resources.ConsumerKey, Properties.Resources.ConsumerSecret, requestToken.Token, pinCode);
 
                     // 認証情報を保存する
                     auth.Token = accessToken.Token;
@@ -222,6 +246,17 @@ namespace FavCas
                 }
             }
             return auth;
+        }
+
+        string ShowAuthorizeWindow(Uri authUri)
+        {
+            AuthorizeWindow authWindow = new AuthorizeWindow();
+            authWindow.AuthUri = authUri;
+            authWindow.Owner = this;
+            if (authWindow.ShowDialog().Value)
+                return authWindow.PinCode;
+            else
+                return null;
         }
 
         private void timeLineView_SelectionChanged(object sender, SelectionChangedEventArgs e)

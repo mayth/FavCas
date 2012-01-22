@@ -136,6 +136,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AuthenticationFailureException.cs" />
     <Compile Include="DateTimeConverter.cs" />
     <Compile Include="StartingWindow.xaml.cs">
       <DependentUpon>StartingWindow.xaml</DependentUpon>
