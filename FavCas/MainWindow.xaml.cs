@@ -408,13 +408,19 @@ namespace FavCas
         private void Window_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.LeftCtrl && !enableMouseOverFav)
+            {
                 enableMouseOverFav = true;
+                Cursor = Cursors.Cross;
+            }
         }
 
         private void Window_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.LeftCtrl && enableMouseOverFav)
+            {
                 enableMouseOverFav = false;
+                Cursor = Cursors.Arrow;
+            }
         }
 
         private void timeLineView_MouseEnter(object sender, MouseEventArgs e)
