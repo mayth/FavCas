@@ -26,7 +26,9 @@ The Full-text of the license is included in License.txt.
 
         <!-- TimeLine View -->
         <ListView x:Name="timeLineView" Grid.Row="0"
-                  SelectionChanged="timeLineView_SelectionChanged">
+                  SelectionChanged="timeLineView_SelectionChanged"
+                  KeyDown="timeLineView_KeyDown"
+                  KeyUp="timeLineView_KeyUp">
             <ListView.ItemContainerStyle>
                 <Style TargetType="{x:Type ListViewItem}">
                     <Setter Property="BorderBrush" Value="Gray" />

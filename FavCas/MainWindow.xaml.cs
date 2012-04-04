@@ -39,6 +39,7 @@ namespace FavCas
         delegate void AddTimeLineDelegate(TwitterStatus status);
         OAuthTokens tokens;
         Twitterizer.Streaming.TwitterStream twitterStream;
+        bool enableMouseOverFav = false;
 
         public static readonly RoutedCommand FavoriteCommand = new RoutedCommand();
         public static readonly RoutedCommand UnfavoriteCommand = new RoutedCommand();
@@ -402,6 +403,18 @@ namespace FavCas
                 }
             }
             e.Handled = true;
+        }
+
+        private void timeLineView_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.LeftCtrl && !enableMouseOverFav)
+                enableMouseOverFav = true;
+        }
+
+        private void timeLineView_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.LeftCtrl && enableMouseOverFav)
+                enableMouseOverFav = false;
         }
     }
 }
