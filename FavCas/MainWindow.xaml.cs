@@ -416,5 +416,16 @@ namespace FavCas
             if (e.Key == Key.LeftCtrl && enableMouseOverFav)
                 enableMouseOverFav = false;
         }
+
+        private void timeLineView_MouseEnter(object sender, MouseEventArgs e)
+        {
+            if (enableMouseOverFav)
+            {
+                var item = sender as ListBoxItem;
+                if (item == null)
+                    return;
+                Favorite(item.Content as TwitterStatus);
+            }
+        }
     }
 }

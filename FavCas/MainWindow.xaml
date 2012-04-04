@@ -33,6 +33,7 @@ The Full-text of the license is included in License.txt.
                 <Style TargetType="{x:Type ListViewItem}">
                     <Setter Property="BorderBrush" Value="Gray" />
                     <EventSetter Event="PreviewMouseDown" Handler="timeLineView_MouseDown" />
+                    <EventSetter Event="MouseEnter" Handler="timeLineView_MouseEnter" />
                 </Style>
             </ListView.ItemContainerStyle>
             <ListView.View>
