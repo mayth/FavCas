@@ -405,13 +405,13 @@ namespace FavCas
             e.Handled = true;
         }
 
-        private void timeLineView_KeyDown(object sender, KeyEventArgs e)
+        private void Window_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.LeftCtrl && !enableMouseOverFav)
                 enableMouseOverFav = true;
         }
 
-        private void timeLineView_KeyUp(object sender, KeyEventArgs e)
+        private void Window_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.LeftCtrl && enableMouseOverFav)
                 enableMouseOverFav = false;

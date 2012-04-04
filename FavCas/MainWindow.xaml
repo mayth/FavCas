@@ -3,7 +3,7 @@ Copyright (c) 2012 mayth
 FavCas is released under the MIT license.
 The Full-text of the license is included in License.txt.
 -->
-    <Window
+<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:fc="clr-namespace:FavCas"
@@ -11,7 +11,9 @@ The Full-text of the license is included in License.txt.
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="FavCas.MainWindow"
         Title="FavCas" Height="600" Width="525"
         Loaded="Window_Loaded"
-        Closed="Window_Closed">
+        Closed="Window_Closed"
+        KeyDown="Window_KeyDown"
+        KeyUp="Window_KeyUp">
     <Window.Resources>
         <fc:UserNameConverter x:Key="UserNameConverter" />
         <fc:DateTimeConverter x:Key="DateTimeConverter" />
@@ -26,9 +28,7 @@ The Full-text of the license is included in License.txt.
 
         <!-- TimeLine View -->
         <ListView x:Name="timeLineView" Grid.Row="0"
-                  SelectionChanged="timeLineView_SelectionChanged"
-                  KeyDown="timeLineView_KeyDown"
-                  KeyUp="timeLineView_KeyUp">
+                  SelectionChanged="timeLineView_SelectionChanged">
             <ListView.ItemContainerStyle>
                 <Style TargetType="{x:Type ListViewItem}">
                     <Setter Property="BorderBrush" Value="Gray" />
