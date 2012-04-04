@@ -9,7 +9,7 @@ The Full-text of the license is included in License.txt.
         xmlns:fc="clr-namespace:FavCas"
         xmlns:cm="clr-namespace:System.ComponentModel;assembly=WindowsBase"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="FavCas.MainWindow"
-        Title="FavCas" Height="350" Width="525"
+        Title="FavCas" Height="600" Width="525"
         Loaded="Window_Loaded"
         Closed="Window_Closed">
     <Window.Resources>
@@ -19,7 +19,7 @@ The Full-text of the license is included in License.txt.
     </Window.Resources>
     <Grid x:Name="WindowRoot">
         <Grid.RowDefinitions>
-            <RowDefinition Height="3*" />
+            <RowDefinition Height="5*" />
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="1*" />
         </Grid.RowDefinitions>
