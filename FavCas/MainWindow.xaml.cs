@@ -402,7 +402,6 @@ namespace FavCas
                         break;
                 }
             }
-            e.Handled = true;
         }
 
         private void Window_KeyDown(object sender, KeyEventArgs e)
