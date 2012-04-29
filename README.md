@@ -1,9 +1,11 @@
 FavCas
 ======
-** The Twitter Client for Fav **
+**The Twitter Client for Fav**
 
 1.0 beta
 May Akizuru - @maytheplic
+
+- - -
 
 FavCas is a client specializing in fav.
 
